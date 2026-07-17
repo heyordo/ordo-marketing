@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title">
+  <title id="title">Ordo</title>
+  <defs>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="24" result="blur"/>
+      <feFlood flood-color="#E6563A" flood-opacity="0.24"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="220" fill="#0D0D0D"/>
+  <g transform="rotate(-8 512 512)" fill="#E6563A" filter="url(#glow)">
+    <rect x="248" y="188" width="528" height="160" rx="80"/>
+    <rect x="122" y="432" width="780" height="160" rx="80"/>
+    <rect x="254" y="676" width="516" height="160" rx="80"/>
+  </g>
+</svg>

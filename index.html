@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0D0D0D">
+  <title>Ordo Waitlist | Think it. Dump it. Done.</title>
+  <meta name="description" content="Join the Ordo waitlist. Dump any thought by typing or speaking, and Ordo sorts it into Now, Next, and Someday.">
+
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Ordo | Think it. Dump it. Done.">
+  <meta property="og:description" content="The brain-dump app that sorts your thoughts into Now, Next, and Someday.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://heyordo.app">
+  <meta name="twitter:card" content="summary">
+
+  <script defer data-domain="heyordo.app" src="https://plausible.io/js/script.js"></script>
+
+  <style>
+    :root {
+      --black: #0D0D0D;
+      --raised: #151515;
+      --line: #2A2A2A;
+      --white: #F2F0EC;
+      --muted: #97938D;
+      --coral: #E6563A;
+      --coral-light: #F06A4B;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+      z-index: 20;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(100% - 40px, 1040px); margin: 0 auto; }
+
+    header {
+      position: relative;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 700; font-size: 20px; }
+    .brand img { width: 34px; height: 34px; border-radius: 8px; display: block; }
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 17px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .nav-link:hover { border-color: #444; }
+
+    .hero {
+      min-height: calc(100svh - 70px);
+      padding: clamp(62px, 10vh, 112px) 0 56px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .hero-inner { width: min(100%, 760px); margin: 0 auto; }
+    .hero-logo {
+      width: clamp(92px, 14vw, 126px);
+      aspect-ratio: 1;
+      display: block;
+      margin: 0 auto 28px;
+      border-radius: 24%;
+    }
+    .eyebrow {
+      color: var(--coral-light);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      margin: 0 0 18px;
+    }
+    h1 {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: clamp(48px, 8vw, 80px);
+      line-height: 0.98;
+      letter-spacing: 0;
+      font-weight: 700;
+    }
+    h1 span { color: var(--coral); }
+    .hero-copy {
+      max-width: 610px;
+      margin: 26px auto 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2.3vw, 20px);
+      line-height: 1.55;
+    }
+
+    .signup {
+      width: min(100%, 620px);
+      margin: 38px auto 0;
+      padding: 22px 22px 12px;
+      background: var(--raised);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      text-align: left;
+    }
+    .signup h2 { margin: 0 0 4px; font-size: 18px; line-height: 1.3; }
+    .signup p { margin: 0 0 14px; color: var(--muted); font-size: 13px; }
+    .tally-frame { display: block; width: 100%; height: 168px; border: 0; }
+    .privacy-note { margin: 14px 0 0; color: #6E6B67; font-size: 12px; text-align: center; }
+
+    .proof {
+      padding: 76px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+    .proof-inner { width: min(100%, 700px); margin: 0 auto; }
+    .proof h2 { margin: 0; font-size: clamp(32px, 4.5vw, 46px); font-weight: 600; line-height: 1.12; letter-spacing: 0; }
+    .proof-copy { margin: 18px auto 0; max-width: 590px; color: var(--muted); font-size: 17px; line-height: 1.6; }
+    .buckets {
+      margin: 36px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .buckets li { padding: 20px 12px; }
+    .buckets li + li { border-left: 1px solid var(--line); }
+    .buckets strong { display: block; color: var(--coral-light); font-size: 15px; font-weight: 600; }
+    .buckets span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; }
+
+    .screens {
+      padding: 76px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .screens h2 { margin: 0; text-align: center; font-size: clamp(30px, 4vw, 42px); font-weight: 600; line-height: 1.15; }
+    .screens-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 288px));
+      justify-content: center;
+      gap: 24px;
+    }
+    .screen-step { margin: 0; }
+    .screen-step figcaption { margin-bottom: 12px; color: var(--white); font-size: 15px; font-weight: 600; }
+    .screen-step figcaption span { margin-right: 8px; color: var(--coral); }
+    .screen-window {
+      aspect-ratio: 946 / 2048;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--raised);
+    }
+    .screen-window img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    .founder { padding: 72px 0; text-align: center; }
+    .founder p { width: min(100%, 660px); margin: 0 auto; color: var(--muted); font-size: 17px; line-height: 1.65; }
+    .founder strong { color: var(--white); }
+    .founder a { color: var(--coral-light); font-weight: 700; }
+
+    footer { border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 28px 0 34px; color: #6E6B67; font-size: 13px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a:hover { color: var(--white); }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 1040px); }
+      .hero { align-items: flex-start; min-height: auto; padding-top: 58px; }
+      .hero-logo { margin-bottom: 24px; }
+      .hero-copy { margin-top: 20px; }
+      .signup { margin-top: 30px; padding: 18px 16px 10px; }
+      .proof { padding: 62px 0; }
+      .screens { padding: 62px 0; }
+      .screens-grid {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: min(82vw, 300px);
+        justify-content: start;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding-bottom: 8px;
+      }
+      .screens-grid::-webkit-scrollbar { display: none; }
+      .screen-step { scroll-snap-align: start; }
+      .founder { padding: 58px 0; }
+    }
+
+    @media (max-width: 420px) {
+      .nav { min-height: 64px; }
+      .brand { font-size: 18px; }
+      .brand img { width: 31px; height: 31px; }
+      .nav-link { min-height: 38px; padding: 0 13px; font-size: 13px; }
+      .hero { padding-top: 48px; }
+      h1 { font-size: 46px; }
+      .buckets li { padding: 18px 6px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Ordo home">
+        <img src="logo.svg" alt="">
+        <span>Ordo</span>
+      </a>
+      <a class="nav-link" href="#waitlist">Join waitlist</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <img class="hero-logo" src="logo.svg" alt="Ordo logo">
+        <p class="eyebrow">Coming to iPhone</p>
+        <h1>Think it.<br>Dump it. <span>Done.</span></h1>
+        <p class="hero-copy">Type or say anything on your mind. Ordo sorts it into Now, Next, and Someday so you can stop organizing and move on.</p>
+
+        <div class="signup" id="waitlist">
+          <h2>Get notified when Ordo launches.</h2>
+          <p>One launch email. No spam.</p>
+          <iframe
+            class="tally-frame"
+            data-tally-src="https://tally.so/embed/NpQj0b?alignLeft=1&hideTitle=1&transparentBackground=1"
+            loading="eager"
+            width="100%"
+            height="168"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Join the Ordo waitlist">
+          </iframe>
+        </div>
+        <p class="privacy-note">Your email is only used for the Ordo launch.</p>
+      </div>
+    </section>
+
+    <section class="proof" aria-labelledby="proof-title">
+      <div class="wrap proof-inner">
+        <h2 id="proof-title">One place for everything in your head.</h2>
+        <p class="proof-copy">Type or say any thought. Ordo sorts it by when it matters.</p>
+        <ul class="buckets">
+          <li><strong>Now</strong><span>Today</span></li>
+          <li><strong>Next</strong><span>Soon</span></li>
+          <li><strong>Someday</strong><span>Later</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="screens" aria-labelledby="screens-title">
+      <div class="wrap">
+        <h2 id="screens-title">Dump it. Ordo sorts it.</h2>
+        <div class="screens-grid">
+          <figure class="screen-step">
+            <figcaption><span>01</span>Open Ordo</figcaption>
+            <div class="screen-window">
+              <img src="sorted-screen.png" alt="The complete Ordo home screen with navigation">
+            </div>
+          </figure>
+          <figure class="screen-step">
+            <figcaption><span>02</span>Say or type anything</figcaption>
+            <div class="screen-window">
+              <img src="capture-screen.png" alt="A long brain dump being typed into Ordo">
+            </div>
+          </figure>
+          <figure class="screen-step">
+            <figcaption><span>03</span>Ordo sorts it</figcaption>
+            <div class="screen-window">
+              <img src="organized-screen.png" alt="Thoughts organized into the Next bucket in Ordo">
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="founder">
+      <div class="wrap">
+        <p><strong>Built by Samuel, 18, for his own overwhelmed brain.</strong> No folders, no setup, and no account required. <a href="#waitlist">Join the waitlist.</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 Ordo</span>
+      <nav class="footer-links" aria-label="Legal links">
+        <a href="privacy/">Privacy</a>
+        <a href="terms/">Terms</a>
+        <a href="support/">Support</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://tally.so/widgets/embed.js"></script>
+</body>
+</html>
