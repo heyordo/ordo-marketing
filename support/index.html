@@ -3,35 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
 <title>Ordo — Help & Support</title>
+<meta name="description" content="Help and support for Ordo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../legal.css">
 <script defer data-domain="heyordo.app" src="https://plausible.io/js/script.js"></script>
-<style>
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:680px;margin:40px auto;padding:0 24px;color:#1A1714;line-height:1.65;background:#F7F5F2;}
-  h1{font-size:32px;margin-bottom:4px;letter-spacing:-0.5px;}
-  .tag{color:#CC4A2E;font-weight:700;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;}
-  h2{font-size:18px;margin-top:32px;letter-spacing:-0.2px;}
-  .question{font-weight:600;color:#1A1714;margin-top:24px;}
-  .answer{margin-top:4px;color:#3a3530;}
-  .contact{background:#FFFFFF;border:1px solid #DDD9D2;border-radius:12px;padding:20px;margin-top:32px;}
-  a{color:#CC4A2E;}
-  .footer{margin-top:48px;padding-top:20px;border-top:1px solid #DDD9D2;font-size:13px;color:#6B6560;}
-</style>
 </head>
 <body>
+<main>
+<a class="site-link" href="/">Ordo</a>
 
 <div class="tag">Ordo Support</div>
 <h1>Need help?</h1>
-<p>Quick answers below. Anything else — just email us, we read every message.</p>
+<p>Quick answers below. Anything else, email us. We read every message.</p>
 
 <div class="contact">
   <strong>Get in touch:</strong> <a href="mailto:support@heyordo.app">support@heyordo.app</a><br>
-  <span style="color:#6B6560;font-size:13px;">Usually replies within 24 hours.</span>
+  <span class="meta">We will reply as soon as we can.</span>
 </div>
 
 <h2>Common questions</h2>
 
 <div class="question">How do I dump something?</div>
-<div class="answer">Tap the bar at the bottom that says "What's on your mind?", type or speak, and tap send. Ordo files it into Now, Next, or Someday automatically.</div>
+<div class="answer">Tap the bar at the bottom that says "Dump it...", type or speak, and tap send. Ordo files it into Now, Next, or Someday automatically.</div>
 
 <div class="question">How does Ordo decide where to put things?</div>
 <div class="answer">An AI reads each dump and sorts it by urgency — Now for today/urgent, Next for soon/this week, Someday for no rush or ideas. It also catches any time you mention ("at 3pm", "tomorrow morning") and schedules a reminder.</div>
@@ -52,27 +50,28 @@
 <div class="answer">Check Settings → Notifications. If they're disabled, reminders won't show. The first time you set one, iOS will ask for permission — if you said no, you can re-enable it in the iOS Settings app under Ordo.</div>
 
 <div class="question">The AI sort got it wrong. What now?</div>
-<div class="answer">Just drag it to the right section, or tap the bucket label. Ordo will learn your preferences over time. You can also tap the title to rename it, or tap the pencil for full editing.</div>
+<div class="answer">Just drag it to the right section, or tap the bucket label. You can also tap the title to rename it, or tap the pencil for full editing.</div>
 
 <div class="question">Voice capture isn't working.</div>
-<div class="answer">Make sure Ordo has microphone permission — iOS Settings → Ordo → Microphone. You also need to be online (we transcribe via Apple's speech service).</div>
+<div class="answer">Make sure Ordo has microphone and speech-recognition permission in iOS Settings. Apple Speech Recognition may require an internet connection depending on your device and language.</div>
 
 <div class="question">Is my data private?</div>
-<div class="answer">Yes. Your dumps live on your device. The text is sent to our AI partner (Anthropic) only to sort it, then forgotten — we have no servers storing your dumps. See our <a href="/privacy/">privacy policy</a> for details.</div>
+<div class="answer">Your saved items live on your device. When you save a dump while online, its text is sent through our Cloudflare service to Anthropic for sorting. We do not store dump text in a content database, but Anthropic's standard API retention can be up to 30 days. See our <a href="/privacy/">privacy policy</a> for details.</div>
 
 <div class="question">How do I delete everything?</div>
-<div class="answer">Settings → Data &amp; Backup → Clear all. Or delete the app from your home screen — that wipes everything too.</div>
+<div class="answer">Delete individual items and empty Recently Deleted, or delete Ordo from your iPhone to remove all locally stored app data. Export a backup first if you want to keep a copy.</div>
 
-<div class="question">When is V2 coming?</div>
-<div class="answer">We're working on Share Sheet capture (dump from any app), home screen widget, calendar sync, and smart reminder times. Email us if you want early access.</div>
+<div class="question">When does Ordo launch?</div>
+<div class="answer">We're aiming to release Ordo on iPhone by the end of July 2026. Join the waitlist and we'll email you when it's available.</div>
 
 <h2>Found a bug? Got an idea?</h2>
-<p>Email <a href="mailto:support@heyordo.app">support@heyordo.app</a> and tell us. We're a tiny team and real feedback shapes what we build next.</p>
+<p>Email <a href="mailto:support@heyordo.app">support@heyordo.app</a> and tell us. Ordo is independently built, and real feedback shapes what comes next.</p>
 
 <div class="footer">
 Ordo — Dump it. Ordo sorts it.<br>
 © 2026 Samuel Laredo
 </div>
 
+</main>
 </body>
 </html>

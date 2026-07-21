@@ -3,27 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
 <title>Ordo — Privacy Policy</title>
+<meta name="description" content="Privacy information for the Ordo app and website.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../legal.css">
 <script defer data-domain="heyordo.app" src="https://plausible.io/js/script.js"></script>
-<style>
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:680px;margin:40px auto;padding:0 24px;color:#1A1714;line-height:1.65;background:#F7F5F2;}
-  h1{font-size:32px;margin-bottom:4px;letter-spacing:-0.5px;}
-  h2{font-size:18px;margin-top:32px;color:#CC4A2E;letter-spacing:-0.2px;}
-  .meta{color:#6B6560;font-size:13px;margin-bottom:32px;}
-  p{margin:12px 0;}
-  ul{padding-left:22px;}
-  li{margin:6px 0;}
-  a{color:#CC4A2E;}
-  code{background:#ECEAE4;padding:2px 6px;border-radius:4px;font-size:14px;}
-  .footer{margin-top:48px;padding-top:20px;border-top:1px solid #DDD9D2;font-size:13px;color:#6B6560;}
-</style>
 </head>
 <body>
+<main>
+<a class="site-link" href="/">Ordo</a>
 
 <h1>Privacy Policy</h1>
-<p class="meta">Ordo · Last updated: [LAUNCH DATE]</p>
+<p class="meta">Ordo · Last updated: July 21, 2026</p>
 
-<p><strong>Short version:</strong> Ordo stores your dumps on your own device. The text you capture is sent to our AI partner solely to sort it, and is not retained beyond that processing. We have no accounts, no tracking, no ads, and no analytics inside the app. If the app crashes, an anonymous technical report helps us fix it. Our website uses cookie-less, aggregate-only visitor counts. You can delete everything anytime from the app.</p>
+<p><strong>Short version:</strong> Ordo does not require an account. Items you create are stored on your device. When you save a dump while online, its text is sent through our Cloudflare service to Anthropic for AI sorting. Anthropic's standard API retention is up to 30 days, subject to limited exceptions described below. If you join the waitlist, Tally stores your email so we can send the launch notice you requested. The app has no ads or behavioral analytics. Our website uses cookie-less, aggregate visitor counts.</p>
 
 <h2>1. Who we are</h2>
 <p>Ordo (the "App") is published by Samuel Laredo ("we", "us", "our"). You can reach us at <a href="mailto:support@heyordo.app">support@heyordo.app</a>.</p>
@@ -31,15 +28,16 @@
 <h2>2. What we collect</h2>
 <p>We collect the minimum needed to make Ordo work:</p>
 <ul>
-  <li><strong>The text you capture.</strong> When you dump a thought into Ordo, that text is sent to our AI partner to be sorted and refined (see Section 3). We do not store this text on any server we control — your dumps live on your device.</li>
+  <li><strong>Waitlist email.</strong> If you join the waitlist on heyordo.app, your email is collected and stored by <strong>Tally</strong>, our form provider, so we can send the Ordo launch notice you requested. Tally processes form data on our behalf under its <a href="https://tally.so/help/privacy-policy">privacy notice</a>. We do not sell your email or use it for unrelated advertising.</li>
+  <li><strong>The text you capture.</strong> When you save a dump while online, its text is sent through our Cloudflare service to Anthropic to be sorted and refined (see Section 3). We do not store dump text in a database on any server we control. Your saved items live on your device.</li>
   <li><strong>App preferences.</strong> Things like dark/light mode, your reminders, and whether you've completed the intro. Stored locally on your device only.</li>
-  <li><strong>Anonymous crash reports.</strong> If the app crashes or hits an error, a technical report is sent to <strong>Sentry</strong> (Functional Software, Inc.), our crash-reporting service. These reports contain technical information (device model, OS version, the error and where in the code it happened) but no personal data and none of your dump content. Apple may additionally share its own crash reports with us if you've opted in to that on your device.</li>
+  <li><strong>Crash reports.</strong> If the app crashes or hits an error, a technical report may be sent to <strong>Sentry</strong> (Functional Software, Inc.), our crash-reporting service. Reports may include information such as device type, operating-system version, and error context. Sentry is configured not to send default personally identifiable information, and we do not intentionally attach the text of your dumps. Apple may additionally share its own crash reports with us if you have opted in on your device.</li>
   <li><strong>Website visits (heyordo.app only, not the App).</strong> Our website uses <strong>Plausible Analytics</strong>, a privacy-first service that counts visits in aggregate — no cookies, no personal data, no advertising identifiers, no cross-site tracking. This runs only on the website; the App itself contains no analytics.</li>
 </ul>
 
 <p>We do <strong>not</strong> collect:</p>
 <ul>
-  <li>Your name, email, phone, or any account information (we have no accounts).</li>
+  <li>Your name, phone number, or an in-app account. Email is collected only if you voluntarily join the website waitlist.</li>
   <li>Your location.</li>
   <li>Your contacts, photos, or other device data.</li>
   <li>Advertising identifiers or device fingerprints.</li>
@@ -47,38 +45,41 @@
 </ul>
 
 <h2>3. AI processing — how the sorting works</h2>
-<p>When you save a dump, Ordo sends the text of that dump to <strong>Anthropic, PBC</strong> ("Anthropic"), the maker of the Claude AI model. Anthropic processes the text and returns a sorted/cleaned version, which Ordo then displays.</p>
+<p>When you save a dump while online, Ordo sends its text through a stateless service hosted on <strong>Cloudflare</strong> to <strong>Anthropic, PBC</strong> ("Anthropic"), the maker of the Claude AI model. Anthropic processes the text and returns a sorted version, which Ordo then displays and stores on your device.</p>
 
 <p>What this means in practice:</p>
 <ul>
-  <li>Each dump's text leaves your device once, for the purpose of sorting and auto-correcting it.</li>
-  <li>Anthropic processes the text under their own privacy terms, available at <a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a>. As of the date above, Anthropic states that API inputs from commercial customers are not used to train their models.</li>
-  <li>We do not retain the text on our own servers after processing.</li>
-  <li>We never send your dumps to anyone else, sell them, or use them for any purpose other than sorting them and returning them to you.</li>
+  <li>The text leaves your device to provide the AI-sorting feature.</li>
+  <li>Our Cloudflare service passes the text to Anthropic and does not store it in a content database.</li>
+  <li>Anthropic states that standard API inputs and outputs are deleted from its backend within 30 days, except where a different agreement applies or longer retention is required for usage-policy enforcement or by law. See <a href="https://privacy.anthropic.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data">Anthropic's retention information</a>.</li>
+  <li>Anthropic states that commercial API inputs and outputs are not used to train its models by default unless the customer explicitly opts in or submits feedback. See <a href="https://privacy.anthropic.com/en/articles/7996868-is-my-data-used-for-model-training">Anthropic's training information</a>.</li>
+  <li>We do not sell your dumps or use them for advertising.</li>
 </ul>
 
-<p>If you do not want your dumps processed by AI, you can use Ordo in offline mode (the in-app sort will fall back to a basic on-device rules-based sort, with no AI involvement).</p>
+<p>When Ordo is offline, it falls back to a basic on-device rules-based sort. Dumps saved while offline are not sent to Anthropic at that time.</p>
 
 <h2>4. Where your data lives</h2>
 <p>Everything you create in Ordo — your dumps, reminders, completed items, settings — is stored on your device using iOS's local storage. Nothing syncs to any cloud we control. If you delete the app, that data is gone from your device.</p>
+
+<p>Waitlist emails are stored with Tally until we no longer need them for Ordo launch communications or you ask us to delete yours.</p>
 
 <p>You can export a full backup of your data anytime from Settings → Data &amp; Backup → Export. You can also restore a backup the same way.</p>
 
 <h2>5. Your rights and choices</h2>
 <ul>
-  <li><strong>Delete your data.</strong> Open the app and use Settings → Data &amp; Backup → Clear all, or simply delete the app from your device.</li>
+  <li><strong>Remove your waitlist email.</strong> Email <a href="mailto:support@heyordo.app">support@heyordo.app</a> and ask us to delete your waitlist submission.</li>
+  <li><strong>Delete your data.</strong> Delete individual items and empty Recently Deleted, or delete Ordo from your device to remove all locally stored app data. Export a backup first if you want to keep a copy.</li>
   <li><strong>Export your data.</strong> Settings → Data &amp; Backup → Export downloads everything as a JSON file you control.</li>
-  <li><strong>Opt out of AI sorting.</strong> Turn off internet access for Ordo in iOS Settings. Ordo will fall back to local sorting only.</li>
   <li><strong>Reach us.</strong> Email <a href="mailto:support@heyordo.app">support@heyordo.app</a> with any questions about your data or this policy.</li>
 </ul>
 
-<p>Depending on where you live, you may have additional rights under laws like GDPR (EU/UK) or CCPA (California), including the right to access, correct, or delete personal data. Because we don't collect personal data tied to you, most of these rights are satisfied by the controls above. If you have a specific request, email us.</p>
+<p>Depending on where you live, you may have additional rights concerning personal data, including rights to access, correct, or delete information. To make a request about information we control, including your waitlist email, contact us using the address below.</p>
 
 <h2>6. Children</h2>
 <p>Ordo is not directed at children under 13, and we do not knowingly collect data from children under 13. If you believe a child has used Ordo, contact us and we'll help.</p>
 
 <h2>7. Changes to this policy</h2>
-<p>If we update this policy, we'll change the date at the top and, for material changes, notify you in the app on next launch. Your continued use after a change means you accept the updated policy.</p>
+<p>If we update this policy, we will post the revised version here and change the date at the top. Where required, we will provide additional notice through an available contact method.</p>
 
 <h2>8. Contact</h2>
 <p>Questions, feedback, or requests about privacy: <a href="mailto:support@heyordo.app">support@heyordo.app</a>.</p>
@@ -88,5 +89,6 @@ Ordo — Dump it. Ordo sorts it.<br>
 © 2026 Samuel Laredo. All rights reserved.
 </div>
 
+</main>
 </body>
 </html>

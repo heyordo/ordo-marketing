@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0D0D0D">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index, follow">
   <title>Ordo Waitlist | Think it. Dump it. Done.</title>
   <meta name="description" content="Join the Ordo waitlist. Dump any thought by typing or speaking, and Ordo sorts it into Now, Next, and Someday.">
+  <link rel="canonical" href="https://heyordo.app/">
 
   <link rel="icon" href="logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,15 +18,17 @@
   <meta property="og:description" content="The brain-dump app that sorts your thoughts into Now, Next, and Someday.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://heyordo.app">
+  <meta property="og:site_name" content="Ordo">
+  <meta property="og:locale" content="en_CA">
   <meta name="twitter:card" content="summary">
 
   <script defer data-domain="heyordo.app" src="https://plausible.io/js/script.js"></script>
 
   <style>
     :root {
-      --black: #0D0D0D;
-      --raised: #151515;
-      --line: #2A2A2A;
+      --black: #000000;
+      --raised: #101010;
+      --line: #242424;
       --white: #F2F0EC;
       --muted: #97938D;
       --coral: #E6563A;
@@ -40,16 +45,12 @@
       font-family: var(--sans);
       -webkit-font-smoothing: antialiased;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.045;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
-      z-index: 20;
-    }
     a { color: inherit; text-decoration: none; }
+    a:focus-visible, iframe:focus-visible {
+      outline: 2px solid var(--coral-light);
+      outline-offset: 4px;
+    }
+    ::selection { background: var(--coral); color: #000000; }
     .wrap { width: min(100% - 40px, 1040px); margin: 0 auto; }
 
     header {
@@ -162,23 +163,25 @@
     }
     .screens h2 { margin: 0; text-align: center; font-size: clamp(30px, 4vw, 42px); font-weight: 600; line-height: 1.15; }
     .screens-grid {
-      margin-top: 36px;
+      margin-top: 44px;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 288px));
+      grid-template-columns: repeat(2, minmax(0, 340px));
       justify-content: center;
-      gap: 24px;
+      gap: clamp(28px, 5vw, 56px);
     }
     .screen-step { margin: 0; }
-    .screen-step figcaption { margin-bottom: 12px; color: var(--white); font-size: 15px; font-weight: 600; }
+    .screen-step figcaption { margin-bottom: 14px; color: var(--white); font-size: 15px; font-weight: 600; }
     .screen-step figcaption span { margin-right: 8px; color: var(--coral); }
     .screen-window {
       aspect-ratio: 946 / 2048;
       overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--raised);
+      padding: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 30px;
+      background: #080808;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.62), 0 0 0 1px rgba(230, 86, 58, 0.05);
     }
-    .screen-window img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .screen-window img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 24px; }
 
     .founder { padding: 72px 0; text-align: center; }
     .founder p { width: min(100%, 660px); margin: 0 auto; color: var(--muted); font-size: 17px; line-height: 1.65; }
@@ -199,18 +202,10 @@
       .proof { padding: 62px 0; }
       .screens { padding: 62px 0; }
       .screens-grid {
-        grid-template-columns: none;
-        grid-auto-flow: column;
-        grid-auto-columns: min(82vw, 300px);
-        justify-content: start;
-        gap: 16px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-        padding-bottom: 8px;
+        grid-template-columns: minmax(0, min(84vw, 320px));
+        justify-content: center;
+        gap: 34px;
       }
-      .screens-grid::-webkit-scrollbar { display: none; }
-      .screen-step { scroll-snap-align: start; }
       .founder { padding: 58px 0; }
     }
 
@@ -242,7 +237,7 @@
     <section class="hero">
       <div class="wrap hero-inner">
         <img class="hero-logo" src="logo.svg" alt="Ordo logo">
-        <p class="eyebrow">Coming to iPhone</p>
+        <p class="eyebrow">Coming to iPhone by the end of July</p>
         <h1>Think it.<br>Dump it. <span>Done.</span></h1>
         <p class="hero-copy">Type or say anything on your mind. Ordo sorts it into Now, Next, and Someday so you can stop organizing and move on.</p>
 
@@ -251,6 +246,7 @@
           <p>One launch email. No spam.</p>
           <iframe
             class="tally-frame"
+            src="https://tally.so/embed/NpQj0b?alignLeft=1&hideTitle=1&transparentBackground=1"
             data-tally-src="https://tally.so/embed/NpQj0b?alignLeft=1&hideTitle=1&transparentBackground=1"
             loading="eager"
             width="100%"
@@ -258,10 +254,11 @@
             frameborder="0"
             marginheight="0"
             marginwidth="0"
+            referrerpolicy="strict-origin-when-cross-origin"
             title="Join the Ordo waitlist">
           </iframe>
         </div>
-        <p class="privacy-note">Your email is only used for the Ordo launch.</p>
+        <p class="privacy-note">By joining, you agree to receive Ordo's launch email. Unsubscribe or ask us to delete your email anytime. <a href="privacy/">Privacy</a></p>
       </div>
     </section>
 
@@ -282,21 +279,15 @@
         <h2 id="screens-title">Dump it. Ordo sorts it.</h2>
         <div class="screens-grid">
           <figure class="screen-step">
-            <figcaption><span>01</span>Open Ordo</figcaption>
+            <figcaption><span>01</span>Say or type anything</figcaption>
             <div class="screen-window">
-              <img src="sorted-screen.png" alt="The complete Ordo home screen with navigation">
+              <img src="dump-matching.png" alt="Four thoughts being typed into Ordo" loading="eager" decoding="async">
             </div>
           </figure>
           <figure class="screen-step">
-            <figcaption><span>02</span>Say or type anything</figcaption>
+            <figcaption><span>02</span>Ordo sorts it</figcaption>
             <div class="screen-window">
-              <img src="capture-screen.png" alt="A long brain dump being typed into Ordo">
-            </div>
-          </figure>
-          <figure class="screen-step">
-            <figcaption><span>03</span>Ordo sorts it</figcaption>
-            <div class="screen-window">
-              <img src="organized-screen.png" alt="Thoughts organized into the Next bucket in Ordo">
+              <img src="sorted-matching.png" alt="The same four thoughts sorted into Now, Next, and Someday" loading="eager" decoding="async">
             </div>
           </figure>
         </div>

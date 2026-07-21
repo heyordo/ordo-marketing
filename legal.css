@@ -1,0 +1,57 @@
+:root {
+  color-scheme: dark;
+  --black: #000000;
+  --raised: #101010;
+  --line: #242424;
+  --white: #F2F0EC;
+  --muted: #97938D;
+  --coral: #E6563A;
+  --coral-light: #F06A4B;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--black); }
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--sans);
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+}
+main { width: min(100% - 40px, 720px); margin: 0 auto; padding: 46px 0 72px; }
+a { color: var(--coral-light); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--coral-light); outline-offset: 4px; }
+::selection { background: var(--coral); color: #000000; }
+.site-link {
+  display: inline-block;
+  margin-bottom: 58px;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.tag { margin-bottom: 8px; color: var(--coral-light); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+h1 { margin: 0; font-size: clamp(36px, 8vw, 54px); line-height: 1.02; letter-spacing: 0; }
+h2 { margin: 38px 0 10px; color: var(--white); font-size: 19px; line-height: 1.35; letter-spacing: 0; }
+p { margin: 12px 0; }
+ul { padding-left: 22px; }
+li { margin: 7px 0; }
+.meta { margin: 10px 0 34px; color: var(--muted); font-size: 13px; }
+.question { margin-top: 28px; color: var(--white); font-weight: 650; }
+.answer { margin-top: 5px; color: var(--muted); }
+.contact {
+  margin-top: 30px;
+  padding: 20px;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+code { padding: 2px 6px; background: var(--raised); border-radius: 4px; color: var(--white); font-size: 14px; }
+.footer { margin-top: 54px; padding-top: 22px; border-top: 1px solid var(--line); color: #6E6B67; font-size: 13px; }
+
+@media (max-width: 520px) {
+  main { width: min(100% - 32px, 720px); padding-top: 30px; }
+  .site-link { margin-bottom: 46px; }
+}
