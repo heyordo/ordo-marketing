@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Ordo</title>
+  <desc id="desc">Think it. Dump it. Done.</desc>
+  <rect width="1200" height="630" fill="#000000"/>
+
+  <g transform="translate(238 195)">
+    <rect width="240" height="240" rx="54" fill="#0B0B0B"/>
+    <g transform="rotate(-8 120 120)" fill="#E6563A">
+      <rect x="62" y="48" width="116" height="36" rx="18"/>
+      <rect x="35" y="102" width="170" height="36" rx="18"/>
+      <rect x="63" y="156" width="114" height="36" rx="18"/>
+    </g>
+  </g>
+
+  <g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif">
+    <text x="540" y="302" fill="#F2F0EC" font-size="112" font-weight="700">Ordo</text>
+    <text x="546" y="372" fill="#A19D97" font-size="38" font-weight="500">Think it. Dump it. <tspan fill="#E6563A">Done.</tspan></text>
+  </g>
+</svg>
