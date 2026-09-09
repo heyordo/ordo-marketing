@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#000000">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#fafafa">
+  <meta name="color-scheme" content="light">
   <meta name="robots" content="index, follow">
   <title>Ordo | AI Brain Dump for iPhone</title>
   <meta name="description" content="Dump any thought by typing or speaking. Ordo sorts it into Now, Next, and Someday. Free on the App Store.">
@@ -17,7 +17,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <meta property="og:title" content="Ordo | Dump your thoughts. Ordo sorts them.">
   <meta property="og:description" content="Type or say mixed thoughts. Ordo separates them into Now, Next, and Someday.">
   <meta property="og:type" content="website">
@@ -39,414 +39,137 @@
 
   <script defer data-domain="heyordo.app" src="https://plausible.io/js/script.js"></script>
 
-  <style>
-    :root {
-      --black: #000000;
-      --raised: #0B0B0B;
-      --line: #282828;
-      --white: #F2F0EC;
-      --muted: #9A9690;
-      --coral: #E6563A;
-      --coral-light: #F06A4B;
-      --sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--black);
-      color: var(--white);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-    a { color: inherit; text-decoration: none; }
-    a:focus-visible, iframe:focus-visible {
-      outline: 2px solid var(--coral-light);
-      outline-offset: 4px;
-    }
-    ::selection { background: var(--coral); color: #000000; }
-    .wrap { width: min(100% - 48px, 1120px); margin: 0 auto; }
-
-    header {
-      position: relative;
-      z-index: 10;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .nav {
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 19px; }
-    .brand img { width: 32px; height: 32px; border-radius: 8px; display: block; }
-    .nav-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 0 16px;
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 600;
-      transition: border-color 160ms ease, color 160ms ease;
-    }
-    .nav-link:hover { border-color: #4A4A4A; color: var(--coral-light); }
-
-    .hero {
-      padding: clamp(52px, 7vh, 74px) 0 clamp(52px, 7vh, 72px);
-      text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .hero-inner { width: min(100%, 920px); margin: 0 auto; }
-    .hero-logo {
-      width: clamp(78px, 10vw, 96px);
-      aspect-ratio: 1;
-      display: block;
-      margin: 0 auto 24px;
-      border-radius: 24%;
-    }
-    .eyebrow {
-      color: var(--coral-light);
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0;
-      margin: 0 0 16px;
-    }
-    h1 {
-      max-width: 900px;
-      margin: 0 auto;
-      font-size: clamp(42px, 6vw, 70px);
-      line-height: 1.04;
-      letter-spacing: 0;
-      font-weight: 700;
-    }
-    h1 span {
-      display: block;
-      margin-top: 12px;
-      color: var(--coral);
-      font-size: 0.62em;
-      line-height: 1.15;
-    }
-    .hero-copy {
-      max-width: 610px;
-      margin: 22px auto 0;
-      color: var(--muted);
-      font-size: clamp(16px, 2vw, 19px);
-      line-height: 1.58;
-    }
-
-    .download-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 11px;
-      margin-top: 30px;
-    }
-    .app-store-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 54px;
-      padding: 0 24px;
-      border: 1px solid var(--coral);
-      border-radius: 6px;
-      background: var(--coral);
-      color: #000000;
-      font-size: 16px;
-      font-weight: 700;
-      transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
-    }
-    .app-store-cta:hover { background: var(--coral-light); border-color: var(--coral-light); transform: translateY(-1px); }
-    .availability-note { margin: 0; color: #77736E; font-size: 12px; line-height: 1.5; }
-
-    .proof {
-      padding: clamp(64px, 8vw, 88px) 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      text-align: center;
-    }
-    .proof-inner { width: min(100%, 760px); margin: 0 auto; }
-    .proof h2 { margin: 0; font-size: clamp(34px, 4.5vw, 48px); font-weight: 600; line-height: 1.1; letter-spacing: 0; }
-    .proof-copy { margin: 16px auto 0; max-width: 590px; color: var(--muted); font-size: 17px; line-height: 1.6; }
-    .buckets {
-      margin: 38px 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-    .buckets li { padding: 22px 12px 21px; }
-    .buckets li + li { border-left: 1px solid var(--line); }
-    .buckets strong { display: block; color: var(--coral-light); font-size: 17px; font-weight: 700; }
-    .buckets span { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; }
-
-    .calendar-distinction {
-      padding: clamp(56px, 7vw, 76px) 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      text-align: center;
-    }
-    .calendar-inner { width: min(100%, 760px); }
-    .calendar-distinction h2 {
-      margin: 0;
-      font-size: clamp(30px, 4vw, 42px);
-      font-weight: 600;
-      line-height: 1.15;
-    }
-    .calendar-copy {
-      max-width: 650px;
-      margin: 16px auto 0;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.65;
-    }
-
-    .screens {
-      padding: clamp(66px, 8vw, 92px) 0 clamp(72px, 9vw, 104px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .screens-heading { width: min(100%, 680px); margin: 0 auto; text-align: center; }
-    .screens h2 { margin: 0; font-size: clamp(34px, 4.5vw, 48px); font-weight: 600; line-height: 1.12; }
-    .screens-copy { margin: 16px auto 0; color: var(--muted); font-size: 17px; line-height: 1.6; }
-    .screens-grid {
-      margin-top: 48px;
-      display: grid;
-      grid-template-columns: minmax(0, 390px) 44px minmax(0, 390px);
-      align-items: center;
-      justify-content: center;
-      gap: clamp(18px, 3vw, 32px);
-    }
-    .screen-step { margin: 0; }
-    .screen-step figcaption { min-height: 48px; margin-bottom: 14px; color: var(--white); font-size: 16px; font-weight: 600; line-height: 1.4; }
-    .screen-step figcaption span { display: block; margin-bottom: 3px; color: var(--coral); font-size: 12px; font-weight: 700; text-transform: uppercase; }
-    .screen-window {
-      aspect-ratio: 946 / 2048;
-      overflow: hidden;
-      padding: 7px;
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      border-radius: 34px;
-      background: #080808;
-      box-shadow: 0 34px 84px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(230, 86, 58, 0.05);
-    }
-    .screen-window img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 27px; }
-    .story-arrow { margin-top: 62px; color: var(--coral); font-size: 32px; line-height: 1; text-align: center; }
-
-    .product-preview {
-      padding: clamp(68px, 8vw, 96px) 0 clamp(72px, 9vw, 104px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .product-preview-heading { width: min(100%, 680px); margin: 0 auto; text-align: center; }
-    .product-preview h2 { margin: 0; font-size: clamp(34px, 4.5vw, 48px); font-weight: 600; line-height: 1.12; }
-    .product-preview-copy { margin: 16px auto 0; color: var(--muted); font-size: 17px; line-height: 1.6; }
-    .preview-rail {
-      margin-top: 46px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 300px));
-      justify-content: center;
-      gap: clamp(14px, 2vw, 22px);
-    }
-    .preview-shot {
-      margin: 0;
-      aspect-ratio: 415 / 900;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 8px;
-      background: #050505;
-      box-shadow: 0 24px 58px rgba(0, 0, 0, 0.5);
-    }
-    .preview-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-    .founder { padding: clamp(64px, 8vw, 86px) 0; text-align: center; }
-    .founder p { width: min(100%, 680px); margin: 0 auto; color: var(--muted); font-size: 17px; line-height: 1.65; }
-    .founder strong { color: var(--white); }
-    .founder-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 48px;
-      margin-top: 26px;
-      padding: 0 20px;
-      border: 1px solid var(--coral);
-      border-radius: 6px;
-      color: var(--white);
-      font-size: 15px;
-      font-weight: 700;
-      transition: background 160ms ease, color 160ms ease;
-    }
-    .founder-cta:hover { background: var(--coral); color: #000000; }
-    .founder-cta span { color: var(--coral-light); font-size: 18px; }
-    .founder-cta:hover span { color: #000000; }
-
-    footer { border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 28px 0 34px; color: #6E6B67; font-size: 13px; }
-    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
-    .footer-links { display: flex; gap: 20px; }
-    .footer-links a:hover { color: var(--white); }
-
-    @media (max-width: 760px) {
-      .wrap { width: min(100% - 32px, 1120px); }
-      .hero { padding-top: 48px; padding-bottom: 52px; }
-      .hero-logo { margin-bottom: 22px; }
-      .hero-copy { margin-top: 20px; }
-      .download-actions { margin-top: 28px; }
-      .screens-grid {
-        grid-template-columns: minmax(0, min(84vw, 320px));
-        justify-content: center;
-        gap: 30px;
-      }
-      .screen-step figcaption { min-height: auto; }
-      .story-arrow { margin: 0; transform: rotate(90deg); font-size: 28px; }
-      .preview-rail {
-        display: flex;
-        justify-content: flex-start;
-        gap: 14px;
-        width: calc(100% + 16px);
-        margin-right: -16px;
-        padding: 0 16px 12px 0;
-        overflow-x: auto;
-        overscroll-behavior-inline: contain;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-      }
-      .preview-rail::-webkit-scrollbar { display: none; }
-      .preview-shot {
-        flex: 0 0 min(78vw, 310px);
-        scroll-snap-align: start;
-      }
-    }
-
-    @media (max-width: 420px) {
-      .nav { min-height: 62px; }
-      .brand { font-size: 18px; }
-      .brand img { width: 31px; height: 31px; }
-      .nav-link { min-height: 38px; padding: 0 13px; font-size: 13px; }
-      .hero { padding-top: 42px; }
-      h1 { font-size: 40px; }
-      h1 span { font-size: 0.66em; }
-      .buckets li { padding: 18px 6px; }
-      .buckets strong { font-size: 15px; }
-      .footer-inner { align-items: flex-start; flex-direction: column; }
-    }
-
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  </style>
+  <link rel="stylesheet" href="/site.css">
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="Ordo home">
-        <img src="logo-original.png" alt="">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="Ordo home">
+        <img src="/apple-touch-icon-ordo.png" alt="" width="40" height="40">
         <span>Ordo</span>
       </a>
-      <a class="nav-link" href="https://apps.apple.com/app/id6797331101">Download</a>
-    </div>
+      <div class="nav-links">
+        <a class="nav-text" href="#how-it-works">How it works</a>
+        <a class="nav-text" href="/articles/">Guides</a>
+        <a class="button button-small" href="https://apps.apple.com/app/id6797331101">Get Ordo <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="wrap hero-inner">
-        <img class="hero-logo" src="logo-original.png" alt="Ordo logo">
-        <p class="eyebrow">Available now on iPhone</p>
-        <h1>Dump your thoughts.<span>Ordo sorts them into Now, Next, and Someday.</span></h1>
-        <p class="hero-copy">Type or say a mixed stream of tasks, ideas, reminders, and anything else on your mind. Ordo separates it, sorts each item, and lets you change anything.</p>
-
-        <div class="download-actions" id="download">
-          <a class="app-store-cta" href="https://apps.apple.com/app/id6797331101">Download on the App Store</a>
-          <p class="availability-note">Free on iPhone. No account required.</p>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Your thoughts, a little more organized.</p>
+        <h1 id="hero-title">Think it.<br>Dump it.<br><span>Sorted.</span></h1>
+        <p class="hero-copy">A task. An idea. That thing you almost forgot. Type or say it all — Ordo sorts your thoughts into Now, Next, and Someday.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://apps.apple.com/app/id6797331101">Download on the App Store <span aria-hidden="true">↗</span></a>
+          <p class="availability">Free on iPhone. No account required.</p>
+        </div>
+        <a class="text-link" href="#how-it-works">Meet your next brain dump <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-product" aria-label="A brain dump and its sorted result in Ordo">
+        <div class="product-heading"><span>FROM ALL OVER THE PLACE</span><span aria-hidden="true">↘</span></div>
+        <div class="phone-pair">
+          <figure class="phone phone-input">
+            <img src="/dump-matching.png" alt="Ordo with a typed brain dump: finish essay for Monday, buy shampoo, gym at 6, and a recipe-scanning app idea." width="1170" height="2532" fetchpriority="high" decoding="async">
+            <figcaption><span>01</span> Get it out.</figcaption>
+          </figure>
+          <figure class="phone phone-result">
+            <img src="/sorted-matching.png" alt="The same thoughts sorted in Ordo: gym under Now, essay and shampoo under Next, and the app idea under Someday." width="1170" height="2532" decoding="async">
+            <figcaption><span>02</span> Find its place.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <section class="proof" aria-labelledby="proof-title">
-      <div class="wrap proof-inner">
-        <h2 id="proof-title">Capture first. Sort afterward.</h2>
-        <p class="proof-copy">Dump mixed thoughts in one go. Ordo separates them and sorts each one by when it matters. You can change anything.</p>
-        <ul class="buckets">
-          <li><strong>Now</strong><span>Today</span></li>
-          <li><strong>Next</strong><span>Soon</span></li>
-          <li><strong>Someday</strong><span>Later</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="calendar-distinction" aria-labelledby="calendar-title">
-      <div class="wrap calendar-inner">
-        <p class="eyebrow">Ordo is not a calendar</p>
-        <h2 id="calendar-title">Capture first. Schedule when it matters.</h2>
-        <p class="calendar-copy">Ordo captures and sorts thoughts before they have a date. A calendar schedules commitments that already have one.</p>
-      </div>
-    </section>
-
-    <section class="screens" aria-labelledby="screens-title">
+    <section class="how-section" id="how-it-works" aria-labelledby="how-title">
       <div class="wrap">
-        <div class="screens-heading">
-          <h2 id="screens-title">Dump it. Ordo sorts it.</h2>
-          <p class="screens-copy">The same four thoughts go in. Ordo puts each one where it belongs.</p>
+        <div class="section-heading">
+          <p class="eyebrow">Less organizing. More doing.</p>
+          <h2 id="how-title">Start with the thought.<br>Ordo takes it from there.</h2>
         </div>
-        <div class="screens-grid">
-          <figure class="screen-step">
-            <figcaption><span>Step 01</span>Say or type anything</figcaption>
-            <div class="screen-window">
-              <img src="dump-matching.png" alt="Four thoughts being typed into Ordo" loading="eager" decoding="async">
-            </div>
-          </figure>
-          <div class="story-arrow" aria-hidden="true">→</div>
-          <figure class="screen-step">
-            <figcaption><span>Step 02</span>Ordo sorts it</figcaption>
-            <div class="screen-window">
-              <img src="sorted-matching.png" alt="The same four thoughts sorted into Now, Next, and Someday" loading="eager" decoding="async">
-            </div>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="product-preview" aria-labelledby="preview-title">
-      <div class="wrap">
-        <div class="product-preview-heading">
-          <h2 id="preview-title">See what matters without sorting first.</h2>
-          <p class="product-preview-copy">Keep tasks, ideas, and timed reminders in one place without deciding where each thought belongs before you save it.</p>
-        </div>
-        <div class="preview-rail" aria-label="Ordo app previews">
-          <figure class="preview-shot">
-            <img src="preview-quiet-sharp.jpg" alt="Ordo organizing thoughts into a calm Now, Next, and Someday view" width="830" height="1800" loading="lazy" decoding="async">
-          </figure>
-          <figure class="preview-shot">
-            <img src="preview-dump-sharp.jpg" alt="A short brain dump being entered into Ordo" width="830" height="1800" loading="lazy" decoding="async">
-          </figure>
-          <figure class="preview-shot">
-            <img src="preview-reminders-sharp.jpg" alt="Ordo reminders organized by when they are due" width="830" height="1800" loading="lazy" decoding="async">
-          </figure>
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">01 / CAPTURE</span>
+            <h3>Let it all out.</h3>
+            <p>Type or speak whatever’s on your mind. Mix tasks, ideas, and reminders in one brain dump.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">02 / SORT</span>
+            <h3>A place for each thought.</h3>
+            <p>Ordo separates your thoughts and sorts them by when they matter: Now, Next, or Someday.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">03 / MAKE IT YOURS</span>
+            <h3>You have the final say.</h3>
+            <p>Move an item. Change the wording. Adjust the result until it makes sense for you.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="founder">
-      <div class="wrap">
-        <p><strong>Built by Samuel, 18, after needing a faster way to capture everything on his mind.</strong> No folders, no setup, and no account required.</p>
-        <a class="founder-cta" href="https://apps.apple.com/app/id6797331101">Download Ordo <span aria-hidden="true">→</span></a>
+    <section class="buckets-section wrap" aria-labelledby="buckets-title">
+      <div class="section-heading split-heading">
+        <h2 id="buckets-title">Everything on your mind.<br>Three places to put it.</h2>
+        <p>You don’t need to decide where a thought belongs before you capture it.</p>
       </div>
+      <div class="buckets">
+        <article class="bucket">
+          <div class="bucket-top"><span class="bucket-index">01</span><span class="bucket-time">Today</span></div>
+          <h3>Now<span aria-hidden="true">.</span></h3>
+          <p>What needs your attention today.</p>
+          <div class="bucket-bottom"><span class="bucket-mark mark-now" aria-hidden="true"></span> Start here</div>
+        </article>
+        <article class="bucket">
+          <div class="bucket-top"><span class="bucket-index">02</span><span class="bucket-time">Soon</span></div>
+          <h3>Next<span aria-hidden="true">.</span></h3>
+          <p>What’s coming up, without crowding today.</p>
+          <div class="bucket-bottom"><span class="bucket-mark mark-next" aria-hidden="true"></span> Keep it in view</div>
+        </article>
+        <article class="bucket">
+          <div class="bucket-top"><span class="bucket-index">03</span><span class="bucket-time">Later</span></div>
+          <h3>Someday<span aria-hidden="true">.</span></h3>
+          <p>Ideas and possibilities worth holding onto.</p>
+          <div class="bucket-bottom"><span class="bucket-mark mark-someday" aria-hidden="true"></span> Save the possibility</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="calendar-section wrap" aria-labelledby="calendar-title">
+      <div class="calendar-panel">
+        <div>
+          <p class="eyebrow">Room for the unscheduled.</p>
+          <h2 id="calendar-title">Before it has a date,<br>it has a place.</h2>
+        </div>
+        <div class="calendar-copy">
+          <p>Some thoughts are ready for a calendar. Others are just ready to leave your head.</p>
+          <p>Ordo captures and sorts thoughts before they have a date. Your calendar handles the commitments that already do.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing wrap" aria-labelledby="closing-title">
+      <p class="eyebrow">Think it. Dump it. Done.</p>
+      <h2 id="closing-title">Your next thought<br>can start here.</h2>
+      <a class="button" href="https://apps.apple.com/app/id6797331101">Download Ordo for iPhone <span aria-hidden="true">↗</span></a>
+      <p class="availability">Free to download. No account required.</p>
+      <div class="founder-note"><span class="founder-rule" aria-hidden="true"></span><p>Built by Samuel, after needing a faster way<br class="desktop-break"> to capture everything on his mind.</p></div>
     </section>
   </main>
 
   <footer>
     <div class="wrap footer-inner">
-      <span>© 2026 Ordo</span>
-      <nav class="footer-links" aria-label="Legal links">
-        <a href="articles/">Articles</a>
-        <a href="privacy/">Privacy</a>
-        <a href="terms/">Terms</a>
-        <a href="support/">Support</a>
+      <a class="brand footer-brand" href="/" aria-label="Ordo home"><img src="/apple-touch-icon-ordo.png" alt="" width="32" height="32"><span>Ordo</span></a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/articles/">Guides</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/support/">Support</a>
       </nav>
+      <span class="copyright">© 2026 Ordo</span>
     </div>
   </footer>
-
 </body>
 </html>

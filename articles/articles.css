@@ -1,12 +1,12 @@
 :root {
-  --black: #000000;
-  --raised: #0B0B0B;
-  --line: #282828;
-  --white: #F2F0EC;
-  --muted: #9A9690;
-  --coral: #E6563A;
-  --coral-light: #F06A4B;
-  --sans: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --black: #fafafa;
+  --raised: #f0f0f0;
+  --line: #dedede;
+  --white: #171717;
+  --muted: #626262;
+  --coral: #be3c24;
+  --coral-light: #a72e1a;
+  --sans: "Manrope", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -20,13 +20,13 @@ body {
   text-rendering: optimizeLegibility;
 }
 a { color: inherit; }
-a:focus-visible { outline: 2px solid var(--coral-light); outline-offset: 4px; }
+a:focus-visible { outline: 3px solid var(--coral-light); outline-offset: 4px; }
 ::selection { background: var(--coral); color: #000000; }
 .wrap { width: min(100% - 48px, 1040px); margin: 0 auto; }
 
-header { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+header { border-bottom: 1px solid var(--line); }
 .nav {
-  min-height: 68px;
+  min-height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,11 +37,11 @@ header { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
   align-items: center;
   gap: 10px;
   color: var(--white);
-  font-size: 19px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 800;
   text-decoration: none;
 }
-.brand img { width: 32px; height: 32px; border-radius: 8px; display: block; }
+.brand img { width: 40px; height: 40px; border-radius: 10px; display: block; }
 .nav-link { color: var(--muted); font-size: 14px; font-weight: 600; text-decoration: none; }
 .nav-link:hover { color: var(--white); }
 
@@ -88,13 +88,13 @@ header { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
 .article-hero { padding: clamp(62px, 9vw, 104px) 0 54px; border-bottom: 1px solid var(--line); }
 .article-hero h1 { max-width: 850px; }
 .article-deck { max-width: 720px; margin: 22px 0 0; color: var(--muted); font-size: 19px; line-height: 1.65; }
-.article-meta { margin: 30px 0 0; color: #77736E; font-size: 13px; }
+.article-meta { margin: 30px 0 0; color: #626262; font-size: 13px; }
 
 .article-body { width: min(100% - 48px, 740px); margin: 0 auto; padding: 58px 0 92px; }
 .article-body h2 { margin: 58px 0 18px; font-size: clamp(28px, 4vw, 38px); line-height: 1.18; }
 .article-body h3 { margin: 36px 0 12px; font-size: 21px; line-height: 1.25; }
 .article-body p,
-.article-body li { color: #C3BFBA; font-size: 17px; line-height: 1.78; }
+.article-body li { color: #505050; font-size: 17px; line-height: 1.78; }
 .article-body p { margin: 0 0 22px; }
 .article-body ul,
 .article-body ol { margin: 0 0 26px; padding-left: 24px; }
@@ -117,16 +117,16 @@ header { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
   justify-content: center;
   margin-top: 10px;
   padding: 0 22px;
-  border-radius: 6px;
-  background: var(--coral);
-  color: #000000 !important;
+  border-radius: 10px;
+  background: var(--white);
+  color: #ffffff !important;
   font-size: 15px;
   font-weight: 700;
   text-decoration: none !important;
 }
-.app-store-cta:hover { background: var(--coral-light); }
+.app-store-cta:hover { background: #333333; }
 
-footer { border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 28px 0 34px; color: #6E6B67; font-size: 13px; }
+footer { border-top: 1px solid var(--line); padding: 28px 0 34px; color: #626262; font-size: 13px; }
 .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .footer-links { display: flex; gap: 20px; }
 .footer-links a { text-decoration: none; }
@@ -142,3 +142,12 @@ footer { border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 28px 0 34px; 
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* The same restrained typography and spacing as the Ordo homepage. */
+h1, h2, h3 { letter-spacing: -.045em; }
+.article-listing h1, .article-hero h1 { line-height: 1.1; }
+.nav-link { display: inline-flex; align-items: center; min-height: 46px; padding: 10px 18px; border-radius: 8px; color: #fff; background: var(--white); }
+.nav-link:hover { color: #fff; background: #333; }
+.footer-links { flex-wrap: wrap; }
+.footer-links a { padding-block: 10px; font-size: 14px; }
+@media (max-width: 680px) { .nav { min-height: 78px; } .brand { font-size: 24px; } .brand img { width: 34px; height: 34px; } }
