@@ -63,5 +63,5 @@ main > p, main > ul { color: #505050; }
 .question { padding-top: 24px; border-top: 1px solid var(--line); font-size: 17px; letter-spacing: -.015em; }
 .answer { line-height: 1.8; }
 .meta { line-height: 1.7; }
-.site-link:before { content: ''; display: inline-block; width: 36px; height: 36px; margin-right: 10px; vertical-align: -9px; border-radius: 9px; background: url('/logo-original.png') center / cover; }
+.site-link:before { content: ''; display: inline-block; width: 36px; height: 36px; margin-right: 10px; vertical-align: -9px; border-radius: 9px; background: #000 url('/logo-original.png') center / 116% no-repeat; }
 @media (max-width: 520px) { .contact { padding: 20px; overflow-wrap: anywhere; } }
