@@ -29,6 +29,8 @@ a:focus-visible { outline: 3px solid var(--coral-dark); outline-offset: 6px; }
 .button span { font-size: 22px; line-height: 1; }
 .button:hover { background: #333; transform: translateY(-2px); }
 .button-small { min-height: 46px; padding: 10px 18px; gap: 24px; font-size: 14px; border-radius: 8px; }
+.hero-actions .button, .closing .button { background: var(--coral); border-color: var(--coral); color: var(--ink); }
+.hero-actions .button:hover, .closing .button:hover { background: #f16a4f; border-color: #f16a4f; }
 .hero { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 56px; padding-block: 76px 94px; }
 .eyebrow { margin: 0 0 24px; font-size: 14px; line-height: 1.6; font-weight: 600; }
 .hero .eyebrow { display: flex; align-items: center; gap: 9px; color: #525252; }
@@ -42,11 +44,14 @@ h1 > span { color: var(--coral-dark); }
 .text-link { display: inline-flex; align-items: center; gap: 22px; margin-top: 32px; font-size: 14px; font-weight: 600; padding-block: 8px; }
 .text-link span { color: var(--coral-dark); font-size: 20px; }
 .text-link:hover { color: var(--coral-dark); }
-.hero-product { min-width: 0; padding-top: 20px; }
+.hero-product { position: relative; isolation: isolate; min-width: 0; padding-top: 20px; }
+.hero-product::before { content: ''; position: absolute; z-index: -1; inset: 10% -3% 0; background: radial-gradient(ellipse at 50% 48%, rgba(230, 86, 58, .16), rgba(230, 86, 58, .06) 48%, transparent 74%); pointer-events: none; }
 .product-heading { display: flex; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid var(--line); font-size: 12px; letter-spacing: .12em; font-weight: 600; color: var(--muted); }
 .product-heading > span:last-child { font-size: 24px; color: var(--coral-dark); line-height: 1; }
 .phone-pair { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 18px; padding-top: 30px; }
 .phone { min-width: 0; margin: 0; }
+.phone-pair:focus-visible { outline: 3px solid var(--coral-dark); outline-offset: 5px; border-radius: 8px; }
+.screen-hint { display: none; }
 .phone-input { margin-top: 58px; }
 .phone img { display: block; width: 100%; height: auto; background: #101010; border: 5px solid #202020; border-radius: 30px; box-shadow: 0 16px 30px -18px #0008; }
 .phone figcaption { font-size: 14px; line-height: 1.5; font-weight: 600; margin-top: 18px; }
@@ -119,8 +124,11 @@ footer { border-top: 1px solid var(--line); padding-block: 32px; }
   .hero-actions { margin-top: 26px; }
   .text-link { margin-top: 20px; }
   .hero-product { max-width: 480px; width: 100%; justify-self: center; padding: 0; }
-  .phone-pair { gap: 16px; padding-top: 24px; }
-  .phone-input { margin-top: 40px; }
+  .phone-pair { display: flex; gap: 20px; padding: 24px 0 20px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #d8a193 transparent; }
+  .phone { flex: 0 0 min(82%, 300px); scroll-snap-align: start; }
+  .phone-input { margin-top: 0; }
+  .screen-hint { display: flex; justify-content: space-between; gap: 16px; margin: 14px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+  .screen-hint span { color: var(--coral-dark); }
   .phone img { border-radius: 26px; }
   .how-section { padding-block: 56px; }
   .steps { grid-template-columns: 1fr; gap: 30px; margin-top: 36px; }
