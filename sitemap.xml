@@ -2,22 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://heyordo.app/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://heyordo.app/articles/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://heyordo.app/articles/brain-dump-app-for-iphone/</loc>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://heyordo.app/articles/brain-dump-method/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://heyordo.app/faq/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://heyordo.app/compare/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heyordo.app/compare/apple-notes/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heyordo.app/compare/todoist/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heyordo.app/compare/paper-brain-dump/</loc>
+    <lastmod>2026-10-04</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://heyordo.app/privacy/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-29</lastmod>
     <priority>0.4</priority>
   </url>
   <url>
