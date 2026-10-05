@@ -1,0 +1,24 @@
+name: Notify IndexNow after Pages publish
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  deployments: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Wait for the matching live Pages deployment, then notify IndexNow
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPOSITORY: ${{ github.repository }}
+          GH_EVENT_PATH: ${{ github.event_path }}
+          INDEXNOW_KEY_FILE: indexnow-7b3720c8fa3870c6051aae35fcf20ea7.txt
+        run: python3 scripts/indexnow_notify.py
