@@ -7,7 +7,7 @@
   <meta name="color-scheme" content="light">
   <meta name="robots" content="index, follow">
   <title>Ordo FAQ: Brain Dump App for iPhone</title>
-  <meta name="description" content="Direct answers about Ordo: what a brain dump app is, price, accounts, sorting, offline use, and privacy.">
+  <meta name="description" content="Answers about Ordo's free iPhone app: talking, reminders, offline sorting, accounts, and privacy.">
   <link rel="canonical" href="https://heyordo.app/faq/">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-ordo.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-ordo-32.png">
@@ -71,6 +71,30 @@
       },
       {
         "@type": "Question",
+        "name": "Can I talk to Ordo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. In version 1.4, talk for up to five minutes. Ordo keeps listening, then sorts everything into Now, Next, and Someday. Start from the app, a Home Screen widget with a mic, a Lock Screen widget, a Control Center control, the Action Button on iPhones that have one (iOS 18+), or Siri: “Talk to Ordo”."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Ordo remind me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Pick a time, then choose Once, Until Done (it comes back until you tap Done), or an alarm on iOS 26. You can tap Done or Snooze right on the notification."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is what I say stored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Where supported, speech becomes text on your iPhone. Ordo does not receive or store your audio. The text—not the audio—is sent through Ordo's Cloudflare service to Anthropic for sorting. Ordo does not store dump text in a server-side content database; your saved cards stay on your iPhone. Anthropic's standard API retention can be up to 30 days, as explained in the privacy policy."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Is my data private?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -124,6 +148,18 @@
           <p>If you're offline, Ordo saves your whole dump right away as one card on your iPhone and makes a quick on-device guess about where it belongs. When you're back online, Ordo splits it into individual cards and sorts them properly.</p>
         </section>
         <section class="faq-item">
+          <h2>Can I talk to Ordo?</h2>
+          <p>Yes. In version 1.4, talk for up to five minutes. Ordo keeps listening, then sorts everything into Now, Next, and Someday. Start from the app, a Home Screen widget with a mic, a Lock Screen widget, a Control Center control, the Action Button on iPhones that have one (iOS 18+), or Siri: “Talk to Ordo”.</p>
+        </section>
+        <section class="faq-item">
+          <h2>Can Ordo remind me?</h2>
+          <p>Yes. Pick a time, then choose Once, Until Done (it comes back until you tap Done), or an alarm on iOS 26. You can tap Done or Snooze right on the notification.</p>
+        </section>
+        <section class="faq-item">
+          <h2>Is what I say stored?</h2>
+          <p>Where supported, speech becomes text on your iPhone. Ordo does not receive or store your audio. The text—not the audio—is sent through Ordo's Cloudflare service to Anthropic for sorting. Ordo does not store dump text in a server-side content database; your saved cards stay on your iPhone. Anthropic's standard API retention can be up to 30 days, as explained in the <a href="/privacy/">privacy policy</a>.</p>
+        </section>
+        <section class="faq-item">
           <h2>Is my data private?</h2>
           <p>Your saved items live on your iPhone. To sort a dump, its text is sent through Ordo's Cloudflare service to Anthropic and is not stored in a content database controlled by Ordo. Anthropic's standard API retention can be up to 30 days. Ordo has no accounts, ads in the app, or cross-app tracking. Ordo records at most one app open per install per day, and each sorted dump, as anonymous usage with a scrambled app-install ID, the date, and app version. The daily open record also says whether at least one reminder is set (yes or no; no reminder details) and whether notifications are allowed (yes or no; the iPhone setting only, no notification content). If a reminder is set or notifications are allowed later that day, the yes updates the same daily record. Sorted-dump counts also include whether you typed or spoke and the number of cards—never the dump text. Ordo asks Apple whether the install came from an Apple Search Ads ad and may retry until Apple provides an answer. Apple's response may contain other details, but Ordo keeps only the yes/no result, once per install, with the scrambled ID. No advertising identifier is used. These records are deleted in a daily cleanup once they are older than 90 days. Technical crash reports may be sent to Sentry; it is configured not to send default personal identifiers, and Ordo does not intentionally attach dump text. Read the full <a href="/privacy/">privacy policy</a>.</p>
         </section>
@@ -144,6 +180,7 @@
         <a href="/">Home</a>
         <a href="/articles/">Guides</a>
         <a href="/compare/">Compare</a>
+        <a href="/press/">Press kit</a>
         <a href="/privacy/">Privacy</a>
         <a href="/support/">Support</a>
       </nav>

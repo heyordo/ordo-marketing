@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://heyordo.app/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -27,8 +27,13 @@
   </url>
   <url>
     <loc>https://heyordo.app/faq/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://heyordo.app/press/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://heyordo.app/compare/</loc>
@@ -52,7 +57,7 @@
   </url>
   <url>
     <loc>https://heyordo.app/privacy/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <priority>0.4</priority>
   </url>
   <url>

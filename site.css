@@ -140,7 +140,7 @@ footer { border-top: 1px solid var(--line); padding-block: 32px; }
   .nav { min-height: 78px; gap: 16px; }
   .nav-links { gap: 20px; }
   .nav-text[href="#how-it-works"] { display: none; }
-  .nav-text[href="#v13"] { display: none; }
+  .nav-text[href="#v14"] { display: none; }
   .brand { font-size: 24px; }
   .brand-icon { width: 34px; height: 34px; border-radius: 9px; }
   .button-small { padding-inline: 14px; gap: 16px; }
