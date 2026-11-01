@@ -21,6 +21,8 @@ body {
 }
 a { color: inherit; }
 a:focus-visible { outline: 3px solid var(--coral-light); outline-offset: 4px; }
+.skip-link { position: absolute; top: -80px; left: 24px; z-index: 100; padding: 16px; border-radius: 8px; background: var(--white); color: #fff; }
+.skip-link:focus { top: 12px; }
 ::selection { background: var(--coral); color: #000000; }
 .wrap { width: min(100% - 48px, 1040px); margin: 0 auto; }
 
