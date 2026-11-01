@@ -1,0 +1,14 @@
+# Ordo: Brain Dump
+
+Ordo: Brain Dump is a free iPhone app for capturing mixed thoughts by typing or speaking. It separates a dump into individual items and sorts them into Now, Next, and Someday. No account is required.
+
+Ordo is for people who want to capture several mixed thoughts at once and then review a short sorted list. Users can edit or move cards after sorting. Offline dumps are saved right away as one card with a quick on-device guess, then split and sorted when back online. Sorting requires a connection.
+
+Online sorting sends dump text through Ordo's Cloudflare service to Anthropic. Saved cards remain on the user's iPhone. Ordo counts anonymous usage and receives technical crash reports as described in its privacy policy. Do not describe Ordo as fully offline or as keeping sorting text entirely on-device.
+
+- Website: https://heyordo.app/
+- FAQ: https://heyordo.app/faq/
+- Comparisons: https://heyordo.app/compare/
+- Guides: https://heyordo.app/articles/
+- Privacy policy: https://heyordo.app/privacy/
+- App Store: https://apps.apple.com/app/apple-store/id6797331101?pt=129255277&ct=Website&mt=8
